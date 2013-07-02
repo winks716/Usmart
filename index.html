@@ -60,6 +60,111 @@
                 </li>
             </ul>
         </div>
+        <ul class="indexList" id="indexList" data-role="listview" data-divider-theme="b"
+        data-inset="true">
+            <li data-role="list-divider" role="heading">
+                区域选择
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    客厅
+                </a>
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    餐厅
+                </a>
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    主卧
+                </a>
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    次卧
+                </a>
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    厨卫
+                </a>
+            </li>
+        </ul>
+        <div data-role="collapsible-set">
+            <div data-role="collapsible">
+                <h3>
+                    客厅
+                </h3>
+            </div>
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>
+                    餐厅
+                </h3>
+            </div>
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>
+                    主卧
+                </h3>
+            </div>
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>
+                    次卧
+                </h3>
+            </div>
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>
+                    厨卫
+                </h3>
+            </div>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <h3>
+                    主灯
+                </h3>
+            </div>
+            <div class="ui-block-b">
+                <div data-role="fieldcontain">
+                    <select name="toggleswitch2" id="toggleswitch2" data-theme="" data-role="slider">
+                        <option value="off">
+                            关
+                        </option>
+                        <option value="on">
+                            开
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="ui-block-a">
+                <h3>
+                    餐灯
+                </h3>
+            </div>
+            <div class="ui-block-b">
+                <div data-role="fieldcontain">
+                    <select name="toggleswitch3" id="toggleswitch3" data-theme="" data-role="slider">
+                        <option value="off">
+                            关
+                        </option>
+                        <option value="on">
+                            开
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="ui-block-a">
+                <h3>
+                    立式空调
+                </h3>
+            </div>
+            <div class="ui-block-b">
+                <div data-role="fieldcontain">
+                    <input id="slider1" name="slider" value="25" min="15" max="35" data-highlight="false"
+                    data-mini="true" type="range">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="indexFooter" id="indexFooter" data-theme="b" data-role="footer"
     data-position="fixed">
