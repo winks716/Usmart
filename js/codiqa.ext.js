@@ -153,6 +153,7 @@ window.CodiqaControls.define('googlemaps', CodiqaControls.GoogleMap);
     }
 	    
     $('#geoPage').bind('click',function(){
+    	alert('you clicked the page');
     	document.addEventListener("deviceready", onDeviceReady, false);
     });
 
