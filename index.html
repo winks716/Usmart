@@ -24,7 +24,7 @@
 </head>
 <body>
 <!-- Home -->
-<div data-role="page" id="page1">
+<div data-role="page" id="homePage">
     <div class="indexHeader" id="indexHeader" data-theme="b" data-role="header">
         <h3 class="indexHeaderTitle" id="indexHeaderTitle">
             Usmart
@@ -34,22 +34,22 @@
         <div class="indexNav" id="indexNav" data-role="navbar" data-iconpos="right">
             <ul>
                 <li>
-                    <a href="#page1" data-transition="fade" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
+                    <a href="#homePage" data-transition="fade" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
                         客厅
                     </a>
                 </li>
                 <li>
-                    <a href="#page1" data-transition="fade" data-theme="" data-icon="">
+                    <a href="#homePage" data-transition="fade" data-theme="" data-icon="">
                         餐厅
                     </a>
                 </li>
                 <li>
-                    <a href="#page1" data-transition="fade" data-theme="" data-icon="">
+                    <a href="#homePage" data-transition="fade" data-theme="" data-icon="">
                         主卧
                     </a>
                 </li>
                 <li>
-                    <a href="geo.html#page1" data-transition="fade" data-theme="" data-icon="">
+                    <a href="#geoPage" data-transition="fade" data-theme="" data-icon="">
                         定位
                     </a>
                 </li>
@@ -61,27 +61,27 @@
                 区域选择
             </li>
             <li data-theme="c">
-                <a href="#page1" data-transition="slide">
+                <a href="#homePage" data-transition="slide">
                     客厅
                 </a>
             </li>
             <li data-theme="c">
-                <a href="#page1" data-transition="slide">
+                <a href="#homePage" data-transition="slide">
                     餐厅
                 </a>
             </li>
             <li data-theme="c">
-                <a href="#page1" data-transition="slide">
+                <a href="#homePage" data-transition="slide">
                     主卧
                 </a>
             </li>
             <li data-theme="c">
-                <a href="#page1" data-transition="slide">
+                <a href="#homePage" data-transition="slide">
                     次卧
                 </a>
             </li>
             <li data-theme="c">
-                <a href="#page1" data-transition="slide">
+                <a href="#homePage" data-transition="slide">
                     厨卫
                 </a>
             </li>
@@ -168,5 +168,11 @@
         </h3>
     </div>
 </div>
+
+<!-- Geo -->
+<div data-role="page" id="geoPage">
+    <div id="geoResult"></div>
+</div>
+
 </body>
 </html>
