@@ -124,31 +124,36 @@ window.CodiqaControls.define('googlemaps', CodiqaControls.GoogleMap);
 
 //customized action
 (function($){
-	
-	    //onSuccess Callback
-	    //This method accepts a Position object, which contains the
-	    //current GPS coordinates
-	    //
-	    var onSuccess = function(position) {
-	       $('#geoResult').html('Latitude: '          + position.coords.latitude          + '\n' +
-	             'Longitude: '         + position.coords.longitude         + '\n' +
-	             'Altitude: '          + position.coords.altitude          + '\n' +
-	             'Accuracy: '          + position.coords.accuracy          + '\n' +
-	             'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-	             'Heading: '           + position.coords.heading           + '\n' +
-	             'Speed: '             + position.coords.speed             + '\n' +
-	             'Timestamp: '         + position.timestamp                + '\n');
-	    };
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+
+    // onSuccess Geolocation
+    //
+    function onSuccess(position) {
+        var element = document.getElementById('geoResult');
+        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                            'Longitude: '          + position.coords.longitude             + '<br />' +
+                            'Altitude: '           + position.coords.altitude              + '<br />' +
+                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                            'Heading: '            + position.coords.heading               + '<br />' +
+                            'Speed: '              + position.coords.speed                 + '<br />' +
+                            'Timestamp: '          + position.timestamp                    + '<br />';
+    }
+
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
 	    
-	    //onError Callback receives a PositionError object
-	    //
-	    function onError(error) {
-	        $('#geoResult').html('code: '    + error.code    + '\n' +
-	             'message: ' + error.message + '\n');
-	    }
-	    
-	    $('#geoPage').bind('click',function(){
-	    	navigator.geolocation.getCurrentPosition(onSuccess, onError);
-	    });
+    $('#geoPage').bind('click',function(){
+    	document.addEventListener("deviceready", onDeviceReady, false);
+    });
 
 })(jQuery);
