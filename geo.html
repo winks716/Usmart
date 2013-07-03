@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title></title>
+  
+  
+  
+  <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css">
+  
+  <!-- Extra Codiqa features -->
+  <link rel="stylesheet" href="css/codiqa.ext.css">
+  
+  <!-- jQuery and jQuery Mobile -->
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/jquery.mobile-1.3.1.min.js"></script>
+
+  <!-- Extra Codiqa features -->
+  <script src="js/codiqa.ext.js"></script>
+</head>
+<body>
+<!-- Geo -->
+<div data-role="page" id="page1"></div>
+  
+<script>
+    //onSuccess Callback
+    //This method accepts a Position object, which contains the
+    //current GPS coordinates
+    //
+    var onSuccess = function(position) {
+       $('#page1').html('Latitude: '          + position.coords.latitude          + '\n' +
+             'Longitude: '         + position.coords.longitude         + '\n' +
+             'Altitude: '          + position.coords.altitude          + '\n' +
+             'Accuracy: '          + position.coords.accuracy          + '\n' +
+             'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+             'Heading: '           + position.coords.heading           + '\n' +
+             'Speed: '             + position.coords.speed             + '\n' +
+             'Timestamp: '         + position.timestamp                + '\n');
+    };
+    
+    //onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        $('#page1').html('code: '    + error.code    + '\n' +
+             'message: ' + error.message + '\n');
+    }
+    
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+</script>
+</body>
+</html>
